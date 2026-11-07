@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 80" width="110" height="80">
+  <g fill="#38B6FF">
+    <!-- Left chunky closing double quote mark - thicker stem -->
+    <path d="M 32 4 L 32 34 C 32 52, 20 68, 2 72 L 2 58 C 12 56, 18 50, 18 42 L 8 42 L 8 4 Z"/>
+    <!-- Right chunky closing double quote mark - thicker stem -->
+    <path d="M 90 4 L 90 34 C 90 52, 78 68, 60 72 L 60 58 C 70 56, 76 50, 76 42 L 66 42 L 66 4 Z"/>
+  </g>
+</svg>
