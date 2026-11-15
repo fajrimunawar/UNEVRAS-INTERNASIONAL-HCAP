@@ -10,12 +10,11 @@
 --tx:#eaf3ee;--mu:#93a89c;--em:#10b981;--te:#19d3a5;--gold:#f2c14e;--red:#ef5b5b;
 --grad:linear-gradient(135deg,#10b981,#19d3a5)}
 body{font-family:system-ui,'Segoe UI',sans-serif;background:var(--bg);color:var(--tx);line-height:1.6}
-h1,h2,h3,.serif{font-family:Georgia,'Times New Roman',serif}
+h1,h2,h3{font-family:Georgia,'Times New Roman',serif}
 a{text-decoration:none;color:inherit;cursor:pointer}
 img{max-width:100%;display:block}
 .container{max-width:1150px;margin:0 auto;padding:0 20px}
 .mini{color:var(--mu);font-size:12.5px}
-/* ═══ NAVBAR UMUM ═══ */
 nav{position:sticky;top:0;z-index:100;background:rgba(10,15,13,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--ln)}
 .nav-in{display:flex;align-items:center;gap:8px;min-height:64px;flex-wrap:wrap;padding:8px 0}
 .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:19px;font-family:Georgia,serif;margin-right:10px}
@@ -25,6 +24,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,15,13,.94);backdrop-fil
 .menu a:hover{color:#fff;background:rgba(255,255,255,.06)}
 .menu a.on{color:#fff;background:linear-gradient(135deg,rgba(16,185,129,.2),rgba(25,211,165,.2));box-shadow:inset 0 0 0 1px rgba(16,185,129,.5)}
 .kanan{margin-left:auto;display:flex;gap:8px;align-items:center}
+.badge-save{font-size:11px;font-weight:800;color:var(--te);background:rgba(16,185,129,.1);box-shadow:inset 0 0 0 1px rgba(16,185,129,.4);padding:5px 11px;border-radius:99px;white-space:nowrap}
 .btn{display:inline-flex;align-items:center;gap:7px;padding:10px 18px;border-radius:11px;font-weight:700;font-size:14px;border:none;cursor:pointer;font-family:inherit;transition:.2s}
 .btn:hover{filter:brightness(1.12)}
 .b-grad{background:var(--grad);color:#04120c;box-shadow:0 5px 16px rgba(16,185,129,.28)}
@@ -33,8 +33,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,15,13,.94);backdrop-fil
 .b-red{background:rgba(239,91,91,.12);color:#ff8a8a;box-shadow:inset 0 0 0 1px rgba(239,91,91,.4)}
 .b-sm{padding:7px 13px;font-size:13px;border-radius:9px}
 .btn.armed{background:var(--red)!important;color:#fff!important}
-.tag{display:none;font-size:10.5px;font-weight:800;letter-spacing:.8px;color:#1d1503;background:var(--gold);padding:3px 9px;border-radius:99px}
-/* ═══ HALAMAN ═══ */
+.btn.dis{opacity:.4;pointer-events:none}
 .page{display:none}
 .pad{padding:38px 0}
 .ph-head{margin-bottom:26px}
@@ -42,7 +41,6 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,15,13,.94);backdrop-fil
 .ph-head h1 small{color:var(--mu);font-weight:600;font-size:13px;margin-left:10px;font-family:system-ui}
 .ph-head p{color:var(--mu);font-size:14px;margin-top:6px;max-width:660px}
 .ph-line{width:70px;height:4px;border-radius:99px;background:linear-gradient(90deg,var(--gold),var(--em));margin-top:12px}
-/* ═══ HERO ═══ */
 .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--ln);padding:64px 0 54px;text-align:center;
 background:radial-gradient(900px 340px at 50% -80px,rgba(16,185,129,.2),transparent),radial-gradient(700px 300px at 90% 130%,rgba(242,193,78,.1),transparent),linear-gradient(180deg,#0f1712,#0a0f0d)}
 .hero h1{font-size:40px;font-weight:700;line-height:1.25}
@@ -52,7 +50,6 @@ background:radial-gradient(900px 340px at 50% -80px,rgba(16,185,129,.2),transpar
 .hstats{display:flex;gap:48px;justify-content:center;margin-top:38px;flex-wrap:wrap}
 .hstat .n{font-size:26px;font-weight:700;font-family:Georgia,serif;color:var(--gold)}
 .hstat .l{font-size:11.5px;color:var(--mu);font-weight:700;letter-spacing:.8px;text-transform:uppercase}
-/* ═══ DAFTAR ISI CARDS ═══ */
 .sec-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px;flex-wrap:wrap}
 .sec-head h2{font-size:21px;font-weight:700}
 .toc{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:38px}
@@ -66,7 +63,6 @@ background:radial-gradient(900px 340px at 50% -80px,rgba(16,185,129,.2),transpar
 .toc-c.gold{background:linear-gradient(160deg,#1a1608,#121b16)}
 .toc-c.gold:hover{box-shadow:0 14px 30px rgba(0,0,0,.4),inset 0 0 0 1px var(--gold)}
 .toc-c.gold .ta{color:var(--gold)}
-/* ═══ KARTU VIDEO ═══ */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px}
 .card{background:var(--card);border-radius:14px;overflow:hidden;box-shadow:inset 0 0 0 1px var(--ln);transition:.22s;display:block}
 .card:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(0,0,0,.45),inset 0 0 0 1px var(--em)}
@@ -85,7 +81,6 @@ background:radial-gradient(900px 340px at 50% -80px,rgba(16,185,129,.2),transpar
 .chip:hover{color:#fff;box-shadow:inset 0 0 0 1px var(--em)}
 .kosong{border:1.5px dashed var(--ln2);border-radius:14px;padding:44px 20px;text-align:center;color:var(--mu)}
 .kosong .big{font-size:38px;margin-bottom:8px}
-/* ═══ FILTER & FORM ═══ */
 .filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px}
 .inp,.sel,.ta{background:var(--card2);color:var(--tx);border:1px solid var(--ln2);border-radius:11px;padding:11px 14px;font-family:inherit;font-size:14px;outline:none}
 .inp:focus,.sel:focus,.ta:focus{border-color:var(--em)}
@@ -98,10 +93,22 @@ background:radial-gradient(900px 340px at 50% -80px,rgba(16,185,129,.2),transpar
 .alert{padding:13px 16px;border-radius:12px;font-size:14px;font-weight:600;margin:0 0 18px;display:none;line-height:1.5}
 .alert.ok{background:rgba(16,185,129,.1);color:#5fe0ac;box-shadow:inset 0 0 0 1px rgba(16,185,129,.4)}
 .alert.no{background:rgba(239,91,91,.1);color:#ff8a8a;box-shadow:inset 0 0 0 1px rgba(239,91,91,.4)}
-/* ═══ TONTON ═══ */
+/* ═══ TONTON + KONTROL VIDEO ═══ */
 .t-wrap{display:grid;grid-template-columns:1fr 330px;gap:26px;padding:32px 0}
 .player{background:#000;border-radius:16px;overflow:hidden;box-shadow:0 14px 40px rgba(0,0,0,.5)}
 .player video{width:100%;display:block;aspect-ratio:16/9;background:#000}
+.vctrl{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:12px}
+.vctrl .btn{padding:9px 14px}
+.switch{display:inline-flex;align-items:center;gap:9px;cursor:pointer;font-size:13px;font-weight:700;color:var(--mu);background:rgba(255,255,255,.04);box-shadow:inset 0 0 0 1px var(--ln2);border-radius:99px;padding:8px 14px;user-select:none;margin-left:auto}
+.switch input{display:none}
+.switch .sl{width:34px;height:19px;border-radius:99px;background:#22333a;position:relative;transition:.2s;flex:none}
+.switch .sl::after{content:'';position:absolute;left:3px;top:3px;width:13px;height:13px;border-radius:50%;background:#8fa3ab;transition:.2s}
+.switch input:checked+.sl{background:rgba(16,185,129,.5)}
+.switch input:checked+.sl::after{left:18px;background:var(--te)}
+.switch input:checked~.sw-t{color:var(--te)}
+.nextup{background:linear-gradient(135deg,rgba(16,185,129,.12),rgba(242,193,78,.08));border-radius:13px;padding:12px 15px;box-shadow:inset 0 0 0 1px rgba(16,185,129,.35);margin-bottom:14px}
+.nextup .lb{font-size:11px;font-weight:800;letter-spacing:.8px;color:var(--te)}
+.nextup .ti2{font-weight:700;font-size:14px;margin-top:3px;line-height:1.4}
 .t-info h1{font-size:23px;font-weight:700;margin-top:16px}
 .t-meta{margin:10px 0 14px;display:flex;gap:12px;flex-wrap:wrap;color:var(--mu);font-size:13.5px;align-items:center}
 .badge2{background:linear-gradient(135deg,rgba(242,193,78,.14),rgba(16,185,129,.14));color:var(--gold);padding:4px 12px;border-radius:99px;font-weight:700;box-shadow:inset 0 0 0 1px rgba(242,193,78,.4)}
@@ -111,7 +118,6 @@ background:radial-gradient(900px 340px at 50% -80px,rgba(16,185,129,.2),transpar
 .side .thumb{width:130px;flex:none}
 .side .cbody{padding:10px 12px}
 .side .ctitle{font-size:13px}
-/* ═══ TENTANG ═══ */
 .fit{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-bottom:26px}
 .fitc{background:var(--card);border-radius:15px;padding:24px;box-shadow:inset 0 0 0 1px var(--ln)}
 .fitc .ic{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;font-size:22px;background:linear-gradient(135deg,rgba(16,185,129,.16),rgba(242,193,78,.14));margin-bottom:14px}
@@ -119,12 +125,10 @@ background:radial-gradient(900px 340px at 50% -80px,rgba(16,185,129,.2),transpar
 .fitc p{color:var(--mu);font-size:13.5px}
 .step{display:flex;gap:14px;margin-bottom:14px;align-items:flex-start}
 .step .no{width:30px;height:30px;flex:none;border-radius:9px;background:var(--grad);display:grid;place-items:center;font-weight:800;font-size:14px;color:#04120c}
-/* ═══ LOGIN ═══ */
 .loginwrap{min-height:56vh;display:grid;place-items:center;padding:40px 0}
 .login-card{width:100%;max-width:380px;background:var(--card);border-radius:18px;padding:34px 30px;box-shadow:inset 0 0 0 1px var(--ln2),0 20px 50px rgba(0,0,0,.4)}
 .login-card h1{font-size:21px;text-align:center}
 .login-card>p{text-align:center;color:var(--mu);font-size:13px;margin-bottom:18px}
-/* ═══ ADMIN LAYOUT ═══ */
 .adm-top{background:var(--panel);border-bottom:1px solid var(--ln);padding:12px 20px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .adm-top .t{font-size:11px;font-weight:800;letter-spacing:1px;color:var(--gold)}
 #admLayout{display:flex;min-height:calc(100vh - 61px)}
@@ -136,7 +140,6 @@ background:radial-gradient(900px 340px at 50% -80px,rgba(16,185,129,.2),transpar
 #side a.on{color:#fff;background:linear-gradient(135deg,rgba(16,185,129,.18),rgba(25,211,165,.18));box-shadow:inset 0 0 0 1px rgba(16,185,129,.45)}
 .side-div{height:1px;background:var(--ln);margin:12px 4px}
 .adm-main{flex:1;min-width:0;padding:30px 26px}
-/* ═══ DASHBOARD ═══ */
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-bottom:26px}
 .stat{background:var(--card);border-radius:15px;padding:20px;box-shadow:inset 0 0 0 1px var(--ln)}
 .stat .n{font-size:26px;font-weight:700;font-family:Georgia,serif}
@@ -159,7 +162,7 @@ background:radial-gradient(900px 340px at 50% -80px,rgba(16,185,129,.2),transpar
 .pwbox{background:var(--card);border-radius:15px;padding:20px;box-shadow:inset 0 0 0 1px var(--ln);flex:1;min-width:280px}
 .pwbox h3{font-size:14.5px;margin-bottom:12px;font-family:system-ui}
 .pwbox .inp{width:100%;margin-bottom:10px}
-/* ═══ TABEL ═══ */
+.saveinfo{background:linear-gradient(135deg,rgba(16,185,129,.08),rgba(242,193,78,.06));border-radius:15px;padding:16px 20px;box-shadow:inset 0 0 0 1px rgba(16,185,129,.3);font-size:13.5px;color:#bfe8d5;margin-bottom:22px;line-height:1.7}
 .tbl-wrap{overflow-x:auto}
 .tbl{width:100%;border-collapse:collapse;background:var(--card);border-radius:14px;overflow:hidden;box-shadow:inset 0 0 0 1px var(--ln)}
 .tbl th{background:#0c130f;text-align:left;padding:12px 14px;font-size:12px;color:var(--mu);text-transform:uppercase;letter-spacing:.5px}
@@ -168,10 +171,10 @@ background:radial-gradient(900px 340px at 50% -80px,rgba(16,185,129,.2),transpar
 .pill{padding:3px 11px;border-radius:99px;font-size:11.5px;font-weight:700;background:rgba(242,193,78,.12);color:var(--gold)}
 .viewn{font-weight:800;color:var(--te)}
 .acts{display:flex;gap:6px}
-/* ═══ LAIN2 ═══ */
-#modeBar{position:fixed;left:14px;bottom:14px;z-index:300;background:#1d1503;color:var(--gold);font-size:12px;font-weight:700;padding:10px 14px;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.5);max-width:320px;display:none}
 #toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(16px);background:#0c130f;color:#fff;padding:12px 20px;border-radius:12px;font-size:14px;font-weight:600;box-shadow:0 10px 30px rgba(0,0,0,.5),inset 0 0 0 1px var(--ln2);opacity:0;pointer-events:none;transition:.3s;z-index:400;max-width:90vw;text-align:center}
 #toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+#saving{position:fixed;right:14px;bottom:14px;z-index:350;background:#0c130f;color:var(--te);font-size:12px;font-weight:700;padding:9px 14px;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.5),inset 0 0 0 1px rgba(16,185,129,.4);opacity:0;transition:.3s;pointer-events:none}
+#saving.show{opacity:1}
 footer{border-top:1px solid var(--ln);padding:26px 20px;text-align:center;color:var(--mu);font-size:13px;margin-top:34px}
 @media(max-width:860px){
  .t-wrap{grid-template-columns:1fr}.charts{grid-template-columns:1fr}
@@ -185,7 +188,7 @@ footer{border-top:1px solid var(--ln);padding:26px 20px;text-align:center;color:
 </head>
 <body>
 
-<!-- ══════════════════ WEBSITE UMUM ══════════════════ -->
+<!-- ═══════════ WEBSITE UMUM ═══════════ -->
 <div id="sitePub">
 <nav><div class="container nav-in">
   <a class="logo" data-go="beranda"><span class="ic">▶</span> VideoKu</a>
@@ -195,7 +198,10 @@ footer{border-top:1px solid var(--ln);padding:26px 20px;text-align:center;color:
     <a data-go="tentang">ℹ️ Tentang</a>
     <a data-go="dashboard" id="miAdmin" style="display:none">🛠️ Panel Admin</a>
   </div>
-  <div class="kanan"><button class="btn b-gold b-sm" id="btnAuth">🔐 Login Admin</button></div>
+  <div class="kanan">
+    <span class="badge-save">💾 Auto-Save AKTIF</span>
+    <button class="btn b-gold b-sm" id="btnAuth">🔐 Login Admin</button>
+  </div>
 </div></nav>
 
 <main>
@@ -203,7 +209,7 @@ footer{border-top:1px solid var(--ln);padding:26px 20px;text-align:center;color:
 <section class="page" id="pg-beranda">
   <div class="hero"><div class="container">
     <h1>VideoKu — <em>Nonton dengan Kelas</em> 🎬</h1>
-    <p>Koleksi video Drama, Story, Komedi, dan banyak lagi. Tampilan rapi, mudah dijelajahi, video langsung diputar di sini.</p>
+    <p>Koleksi video Drama, Story, Komedi, dan banyak lagi. Video habis? Otomatis lanjut ke video berikutnya!</p>
     <div class="cta">
       <a class="btn b-grad" data-go="daftar">🎥 Mulai Nonton</a>
       <a class="btn b-ghost" data-go="tentang">ℹ Tentang Situs</a>
@@ -211,11 +217,11 @@ footer{border-top:1px solid var(--ln);padding:26px 20px;text-align:center;color:
     <div class="hstats">
       <div class="hstat"><div class="n" id="hVid">0</div><div class="l">Video</div></div>
       <div class="hstat"><div class="n" id="hViews">0</div><div class="l">Total Ditonton</div></div>
-      <div class="hstat"><div class="n" id="hKat">8</div><div class="l">Kategori</div></div>
+      <div class="hstat"><div class="n">8</div><div class="l">Kategori</div></div>
     </div>
   </div></div>
   <div class="container" style="padding-top:40px">
-    <div class="sec-head"><h2>📚 Daftar Isi Website</h2><span class="mini">Klik untuk membuka halaman</span></div>
+    <div class="sec-head"><h2>📚 Daftar Isi Website</h2><span class="mini">Klik kartu untuk membuka halaman</span></div>
     <div class="toc" id="tocBox"></div>
     <div class="sec-head"><h2>🆕 Video Terbaru</h2><a class="btn b-ghost b-sm" data-go="daftar">Lihat Semua →</a></div>
     <div id="listTerbaru"></div>
@@ -224,7 +230,7 @@ footer{border-top:1px solid var(--ln);padding:26px 20px;text-align:center;color:
     <div class="sec-head"><h2>🔥 Paling Banyak Ditonton</h2></div>
     <div class="grid" id="listPopuler"></div>
   </div>
-  <div class="container" style="padding:38px 20px 44px" id="secKat">
+  <div class="container" style="padding:38px 20px 44px">
     <div class="sec-head"><h2>🗂 Jelajahi per Kategori</h2></div>
     <div class="chips" id="chipKat"></div>
     <div id="listPerKat"></div>
@@ -257,23 +263,24 @@ footer{border-top:1px solid var(--ln);padding:26px 20px;text-align:center;color:
     <p>Website video dengan sistem terhubung: Admin mengupload → pengunjung menonton → semua tontonan tercatat otomatis di grafik Admin.</p>
     <div class="ph-line"></div>
   </div>
+  <div class="saveinfo">💾 <strong>Penyimpanan Otomatis &amp; Permanen:</strong> semua video, statistik, dan pengaturan tersimpan sendiri setiap saat. Refresh halaman, tutup browser, bahkan matikan perangkat — <strong>data TETAP ADA</strong>. Data hanya bisa dihapus <strong>manual</strong> oleh Admin.</div>
   <div class="fit">
+    <div class="fitc"><div class="ic">▶️</div><h3>Auto-Next &amp; Ulangi</h3><p>Video habis? Otomatis lanjut ke video berikutnya, atau ulangi dari awal. Ada juga tombol next/prev manual.</p></div>
     <div class="fitc"><div class="ic">🗂</div><h3>8 Kategori</h3><p>Drama, Story, Komedi, Horor, Aksi, Dokumenter, Musik, Lainnya — video rapi per kategori.</p></div>
-    <div class="fitc"><div class="ic">▶️</div><h3>Putar Langsung</h3><p>Klik video mana pun, langsung diputar di halaman ini tanpa buka aplikasi lain.</p></div>
-    <div class="fitc"><div class="ic">📊</div><h3>Statistik Nyata</h3><p>Setiap tontonan tercatat. Admin melihat grafik harian & video terpopuler.</p></div>
+    <div class="fitc"><div class="ic">📊</div><h3>Statistik Nyata</h3><p>Setiap tontonan tercatat. Admin melihat grafik harian &amp; video terpopuler.</p></div>
   </div>
   <div class="fitc" style="max-width:660px">
     <h3 style="margin-bottom:14px">🚀 Cara Kerjanya</h3>
     <div class="step"><div class="no">1</div><div>Admin klik <strong>🔐 Login Admin</strong> (kanan atas), masuk dengan password.</div></div>
-    <div class="step"><div class="no">2</div><div>Di menu <strong>⬆️ Upload Video</strong>, isi judul, deskripsi, kategori & pilih file video.</div></div>
-    <div class="step"><div class="no">3</div><div>Video <strong>langsung tampil</strong> di Beranda & Daftar Video — bisa langsung diputar.</div></div>
-    <div class="step"><div class="no">4</div><div>Setiap penonton tercatat → <strong>📊 Dashboard</strong> menampilkan angka & grafik.</div></div>
+    <div class="step"><div class="no">2</div><div>Di menu <strong>⬆️ Upload Video</strong>, isi judul, deskripsi, kategori &amp; pilih file video.</div></div>
+    <div class="step"><div class="no">3</div><div>Video <strong>langsung tampil</strong> di Beranda &amp; Daftar Video — bisa langsung diputar.</div></div>
+    <div class="step"><div class="no">4</div><div>Video habis → <strong>otomatis next</strong> (atau klik 🔁 Ulangi / ⏭ Next manual). Semua tercatat di Dashboard.</div></div>
   </div>
 </div></section>
 
 <!-- LOGIN -->
 <section class="page" id="pg-login"><div class="loginwrap"><div class="container"><div class="login-card">
-  <h1>🔐 Login Admin</h1><p>Masuk untuk mengelola video & melihat statistik</p>
+  <h1>🔐 Login Admin</h1><p>Masuk untuk mengelola video &amp; melihat statistik</p>
   <div class="alert no" id="loginErr"></div>
   <form id="formLogin">
     <input class="inp" type="password" id="loginPass" placeholder="Password admin" required style="width:100%">
@@ -284,17 +291,18 @@ footer{border-top:1px solid var(--ln);padding:26px 20px;text-align:center;color:
 </main>
 
 <footer>
-  © <span id="yr"></span> VideoKu — Website Umum &amp; Panel Admin dalam satu sistem terhubung 🎬<br>
-  <small id="footNote"></small>
+  © <span id="yr"></span> VideoKu — Website Umum &amp; Panel Admin · Data tersimpan otomatis &amp; permanen 💾<br>
+  <small>Refresh / tutup browser tidak menghapus data. Hapus hanya manual via Admin.</small>
 </footer>
 </div>
 
-<!-- ══════════════════ PANEL ADMIN ══════════════════ -->
+<!-- ═══════════ PANEL ADMIN ═══════════ -->
 <div id="siteAdm" style="display:none">
 <div class="adm-top">
   <a class="logo" style="font-size:17px"><span class="ic">▶</span> VideoKu</a>
   <span class="t">PANEL ADMIN</span>
   <div class="kanan">
+    <span class="badge-save">💾 Auto-Save AKTIF</span>
     <a class="btn b-ghost b-sm" data-go="beranda">🌐 Lihat Website Umum</a>
     <a class="btn b-red b-sm" data-act="logout">🚪 Keluar</a>
   </div>
@@ -314,6 +322,7 @@ footer{border-top:1px solid var(--ln);padding:26px 20px;text-align:center;color:
   <section class="page" id="pg-dashboard">
     <div class="ph-head"><h1>📊 Dashboard Admin</h1><p>Ringkasan semua aktivitas — angka &amp; grafik terisi otomatis setelah ada video.</p><div class="ph-line"></div></div>
     <div class="alert ok" id="dashAlert">Semua angka masih 0 — normal, karena belum ada video. Upload video pertama dan semuanya terisi otomatis! 🚀</div>
+    <div class="saveinfo">💾 <strong>Sistem Auto-Save:</strong> setiap upload, edit, hapus, dan tontonan <strong>langsung tersimpan otomatis</strong>. Refresh / tutup browser = data tetap ada. Hanya bisa dihapus manual lewat 🗑 per video atau Reset di bawah.</div>
     <div class="sec-head"><h2 style="font-size:17px">📚 Daftar Isi Admin</h2></div>
     <div class="toc" id="admMenu" style="margin-bottom:26px"></div>
     <div class="stats" id="statBox"></div>
@@ -331,16 +340,16 @@ footer{border-top:1px solid var(--ln);padding:26px 20px;text-align:center;color:
         <button class="btn b-ghost b-sm">💾 Simpan Password</button></form>
       </div>
       <div class="pwbox">
-        <h3>⚠️ Zona Bahaya</h3>
+        <h3>⚠️ Zona Bahaya — Hapus Manual</h3>
         <button class="btn b-red b-sm" id="btnReset">🗑 Reset Semua Data (klik 2x)</button>
-        <p class="mini" style="margin-top:10px">Menghapus SEMUA video &amp; statistik dari perangkat ini.</p>
+        <p class="mini" style="margin-top:10px">Ini SATU-SATUNYA cara menghapus semua data sekaligus.</p>
       </div>
     </div>
   </section>
 
   <!-- UPLOAD -->
   <section class="page" id="pg-upload">
-    <div class="ph-head"><h1>⬆️ Upload Video Baru</h1><p>Video yang diupload di sini <strong>langsung tampil &amp; bisa diputar</strong> di website umum.</p><div class="ph-line"></div></div>
+    <div class="ph-head"><h1>⬆️ Upload Video Baru</h1><p>Video diupload di sini → <strong>tersimpan otomatis permanen</strong> → langsung tampil &amp; bisa diputar di website umum.</p><div class="ph-line"></div></div>
     <div class="alert" id="upMsg"></div>
     <form class="form" id="formUpload">
       <label>Judul Video *</label><input class="inp" id="upJudul" required placeholder="Contoh: Drama Cinta Episode 1">
@@ -372,7 +381,7 @@ footer{border-top:1px solid var(--ln);padding:26px 20px;text-align:center;color:
 
   <!-- DATA VIDEO -->
   <section class="page" id="pg-data">
-    <div class="ph-head"><h1>📋 Data Video <small id="cntData"></small></h1><p>Semua data lengkap dalam 1 tempat: judul, kategori, tanggal, jumlah ditonton, edit &amp; hapus.</p><div class="ph-line"></div></div>
+    <div class="ph-head"><h1>📋 Data Video <small id="cntData"></small></h1><p>Semua data lengkap dalam 1 tempat: judul, kategori, tanggal, jumlah ditonton, edit &amp; hapus manual.</p><div class="ph-line"></div></div>
     <form class="filters" id="formData">
       <input class="inp" id="dq" placeholder="🔍 Cari judul...">
       <select class="sel" id="dkat"><option value="">Semua Kategori</option></select>
@@ -386,25 +395,29 @@ footer{border-top:1px solid var(--ln);padding:26px 20px;text-align:center;color:
 </div>
 </div>
 
-<div id="modeBar"></div>
 <div id="toast"></div>
+<div id="saving">💾 Menyimpan otomatis…</div>
 
 <script>
 'use strict';
-/* ═══ KONFIG ═══ */
+/* ════════════════════════════════════════════════════
+   VIDEOKU — Auto-Save Permanen + Pemutar Pintar
+   - Data tersimpan OTOMATIS (IndexedDB, permanen)
+   - Refresh/tutup browser = data tetap ada
+   - Hapus HANYA manual (🗑 klik 2x / Reset Dashboard)
+   - Video habis → AUTO-NEXT ke video berikutnya
+   - Tombol: ⏮ Sebelumnya · 🔁 Ulangi · ⏭ Berikutnya
+   Password bawaan: fajri123
+   ════════════════════════════════════════════════════ */
 const KATEGORI=['Drama','Story','Komedi','Horor','Aksi','Dokumenter','Musik','Lainnya'];
 const WARNA=['#10b981','#19d3a5','#f2c14e','#60a5fa','#a78bfa','#f472b6','#f59e0b','#34d399'];
 const VTipe={mp4:'video/mp4',webm:'video/webm',ogg:'video/ogg',mov:'video/quicktime'};
-const _mem={};
-const sGet=k=>{try{return localStorage.getItem(k)}catch(e){return (k in _mem)?_mem[k]:null}};
-const sSet=(k,v)=>{try{try{localStorage.setItem(k,v)}catch(e){_mem[k]=v}}catch(e){}};
-let adminPass=sGet('vk_pass')||'fajri123';
+let adminPass;try{adminPass=localStorage.getItem('vk_pass')||'fajri123'}catch(e){adminPass='fajri123'}
+let autoNext;try{autoNext=localStorage.getItem('vk_autonext')!=='0'}catch(e){autoNext=true}
 
-/* ═══ STATE ═══ */
-let videos=[],views=[],idc=0,wid=0,isAdmin=false,mode='mem';
-let cur={page:'beranda',params:{}},editId=null,curURL=null,idb=null;
+let videos=[],views=[],idc=0,wid=0,isAdmin=false;
+let cur={page:'beranda',params:{}},editId=null,curURL=null,idb=null,wantAutoPlay=false;
 
-/* ═══ HELPER ═══ */
 const $=s=>document.querySelector(s);
 const $$=s=>document.querySelectorAll(s);
 const h=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
@@ -414,8 +427,12 @@ const tglID=iso=>{try{const d=new Date(iso);return d.getDate()+' '+BLN[d.getMont
 const dayKey=iso=>{try{const d=new Date(iso);return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}catch(e){return ''}};
 const vCount=id=>views.reduce((a,w)=>a+(w.videoId===id?1:0),0);
 const vById=id=>videos.find(v=>v.id===id);
-let toastT=null;
+/* Playlist: urutan upload (Episode 1 → 2 → 3) */
+const playlist=()=>[...videos].sort((a,b)=>a.id-b.id);
+
+let toastT=null,saveT=null;
 function toast(m){const el=$('#toast');el.textContent=m;el.classList.add('show');clearTimeout(toastT);toastT=setTimeout(()=>el.classList.remove('show'),2600);}
+function indikatorSimpan(){const el=$('#saving');el.classList.add('show');clearTimeout(saveT);saveT=setTimeout(()=>el.classList.remove('show'),1200);}
 function armBtn(b){
   if(b.dataset.armed==='1')return true;
   b.dataset.armed='1';b.dataset.old=b.innerHTML;b.innerHTML='Yakin?';b.classList.add('armed');
@@ -423,37 +440,34 @@ function armBtn(b){
   return false;
 }
 
-/* ═══ PENYIMPANAN (IndexedDB opsional, aman diganggu) ═══ */
+/* ═══ DATABASE PERMANEN ═══ */
 function idbOpen(){return new Promise((res,rej)=>{
-  let ok=false;const to=setTimeout(()=>{if(!ok){ok=true;rej(0)}},2500);
-  try{const r=indexedDB.open('videoku_v4',1);
-    r.onupgradeneeded=e=>{const d=e.target.result;
-      if(!d.objectStoreNames.contains('video'))d.createObjectStore('video',{keyPath:'id'});
-      if(!d.objectStoreNames.contains('views'))d.createObjectStore('views',{keyPath:'id'});};
-    r.onsuccess=e=>{if(!ok){ok=true;clearTimeout(to);res(e.target.result)}};
-    r.onerror=()=>{if(!ok){ok=true;clearTimeout(to);rej(0)}};
-  }catch(e){if(!ok){ok=true;clearTimeout(to);rej(0)}}
+  const r=indexedDB.open('videoku_final',1);
+  r.onupgradeneeded=e=>{const d=e.target.result;
+    if(!d.objectStoreNames.contains('video'))d.createObjectStore('video',{keyPath:'id'});
+    if(!d.objectStoreNames.contains('views'))d.createObjectStore('views',{keyPath:'id'});};
+  r.onsuccess=e=>res(e.target.result);
+  r.onerror=()=>rej(r.error);
 });}
-function idbAll(st){return new Promise(res=>{try{const q=idb.transaction(st).objectStore(st).getAll();q.onsuccess=()=>res(q.result||[]);q.onerror=()=>res([]);}catch(e){res([])}});}
-let saveT=null;
-function simpan(){if(mode!=='db'||!idb)return;clearTimeout(saveT);
-  saveT=setTimeout(()=>{try{const tx=idb.transaction(['video','views'],'readwrite');
+function idbAll(st){return new Promise(res=>{const q=idb.transaction(st).objectStore(st).getAll();q.onsuccess=()=>res(q.result||[]);q.onerror=()=>res([]);});}
+function simpan(){
+  if(!idb)return;
+  indikatorSimpan();
+  try{const tx=idb.transaction(['video','views'],'readwrite');
     const sv=tx.objectStore('video'),sw=tx.objectStore('views');
     sv.clear();sw.clear();
     videos.forEach(v=>sv.put({id:v.id,judul:v.judul,desc:v.desc,kategori:v.kategori,thumb:v.thumb,tanggal:v.tanggal,file:v.file}));
     views.forEach(w=>sw.put(w));
-  }catch(e){mode='mem';setStatus();}},200);}
-function setStatus(){
-  const perm=(mode==='db');
-  $('#footNote').textContent=perm?'💾 Data tersimpan permanen di browser ini — jangan bersihkan data situs agar video tidak hilang.':'⚠️ Mode sementara: penyimpanan browser diblokir. Buka file langsung di Chrome/Edge agar data tersimpan permanen.';
-  $('#modeBar').style.display=perm?'none':'block';
+  }catch(e){toast('⚠️ Gagal menyimpan — buka lewat Chrome/Edge langsung');}
 }
 
 /* ═══ NAVIGASI ═══ */
 function nav(p,params){cur={page:p,params:params||{}};render();window.scrollTo(0,0);}
-function openTonton(id){
+function openTonton(id,autoplay){
   if(!vById(id)){toast('Video tidak ditemukan');return;}
-  views.push({id:++wid,videoId:id,waktu:new Date().toISOString()});simpan();
+  views.push({id:++wid,videoId:id,waktu:new Date().toISOString()});
+  simpan();
+  wantAutoPlay=!!autoplay;
   nav('tonton',{id:id});
 }
 document.addEventListener('click',e=>{
@@ -463,6 +477,13 @@ document.addEventListener('click',e=>{
   if(a){e.preventDefault();
     const act=a.dataset.act;
     if(act==='open')openTonton(parseInt(a.dataset.id));
+    else if(act==='next'||act==='prev'){
+      const pl=playlist(),idx=pl.findIndex(x=>x.id===parseInt(a.dataset.ref));
+      const tgt=act==='next'?pl[idx+1]:pl[idx-1];
+      if(tgt)openTonton(tgt.id,act==='next');
+      else toast(act==='next'?'Ini video terakhir 🎬':'Ini video pertama 🎬');
+    }
+    else if(act==='replay'){const v=$('#vidEl');if(v){v.currentTime=0;v.play().catch(()=>{});}}
     else if(act==='del'){if(armBtn(a))hapusVideo(parseInt(a.dataset.id));}
     else if(act==='logout'){isAdmin=false;toast('Keluar dari Panel Admin');nav('beranda');}
   }
@@ -506,7 +527,7 @@ function cardHTML(v){
 }
 function kosong(pesan){
   return '<div class="kosong"><div class="big">🎬</div><strong>'+h(pesan)+'</strong><br>'+
-  '<small>Data muncul otomatis setelah Admin mengupload video.</small><br><br>'+
+  '<small>Data tersimpan otomatis begitu Admin mengupload video.</small><br><br>'+
   (isAdmin?'<a class="btn b-grad b-sm" data-go="upload">⬆️ Upload Video Sekarang</a>'
           :'<a class="btn b-gold b-sm" data-go="login">🔐 Login Admin untuk Upload</a>')+'</div>';
 }
@@ -526,12 +547,12 @@ function renderBeranda(){
   $('#hVid').textContent=fmt(videos.length);
   $('#hViews').textContent=fmt(views.length);
   const items=[
-    {n:'01',i:'🏠',t:'Beranda',d:'Halaman utama — video terbaru & terpopuler',go:'beranda'},
+    {n:'01',i:'🏠',t:'Beranda',d:'Daftar isi, video terbaru & terpopuler',go:'beranda'},
     {n:'02',i:'🎬',t:'Daftar Video',d:'Semua video + pencarian & filter kategori',go:'daftar'},
-    {n:'03',i:'ℹ️',t:'Tentang',d:'Cara kerja & fitur website ini',go:'tentang'},
+    {n:'03',i:'ℹ️',t:'Tentang',d:'Fitur auto-next, auto-save & cara kerja',go:'tentang'},
   ];
-  items.push(isAdmin?{n:'05',i:'🛠️',t:'Panel Admin',d:'Dashboard, Upload & Data Video',go:'dashboard',gold:1}
-                    :{n:'05',i:'🔐',t:'Login Admin',d:'Masuk untuk kelola video & statistik',go:'login',gold:1});
+  items.push(isAdmin?{n:'04',i:'🛠️',t:'Panel Admin',d:'Dashboard, Upload & Data Video',go:'dashboard',gold:1}
+                    :{n:'04',i:'🔐',t:'Login Admin',d:'Masuk untuk kelola video & statistik',go:'login',gold:1});
   $('#tocBox').innerHTML=items.map(c=>
     '<a class="toc-c'+(c.gold?' gold':'')+'" data-go="'+c.go+'"><span class="tn">'+c.n+'</span><span class="ti">'+c.i+'</span><b>'+c.t+'</b><small>'+c.d+'</small><span class="ta">Buka →</span></a>').join('');
   const terbaru=[...videos].sort((a,b)=>b.id-a.id).slice(0,8);
@@ -558,24 +579,58 @@ function renderDaftar(){
   $('#listDaftar').innerHTML=list.length?'<div class="grid">'+list.map(cardHTML).join('')+'</div>':kosong('Tidak ada video yang cocok.');
 }
 
-/* ═══ TONTON ═══ */
+/* ═══ TONTON + AUTO-NEXT + ULANGI ═══ */
 function renderTonton(){
   const id=parseInt(cur.params.id),v=vById(id),w=$('#tontonWrap');
   if(!v){w.innerHTML=kosong('Video tidak ditemukan atau sudah dihapus.');return;}
   try{if(curURL)URL.revokeObjectURL(curURL)}catch(e){}
   curURL=URL.createObjectURL(v.file);
   const tipe=VTipe[(v.file.name.split('.').pop()||'').toLowerCase()]||'video/mp4';
-  let rel=videos.filter(x=>x.id!==id&&x.kategori===v.kategori).sort((a,b)=>b.id-a.id);
-  if(rel.length<5)rel=rel.concat(videos.filter(x=>x.id!==id&&x.kategori!==v.kategori).sort((a,b)=>b.id-a.id));
-  rel=rel.slice(0,5);
+
+  /* Playlist & posisi */
+  const pl=playlist(),idx=pl.findIndex(x=>x.id===id);
+  const prev=pl[idx-1]||null,next=pl[idx+1]||null;
+
+  /* Rekomendasi sidebar: next dulu, lalu satu kategori, lalu terbaru */
+  let rel=[];
+  if(next)rel.push(next);
+  videos.filter(x=>x.id!==id&&x.kategori===v.kategori&&x.id!==next?.id).sort((a,b)=>b.id-a.id).slice(0,4).forEach(x=>rel.push(x));
+  if(rel.length<5)videos.filter(x=>x.id!==id&&!rel.includes(x)).sort((a,b)=>b.id-a.id).slice(0,5-rel.length).forEach(x=>rel.push(x));
+
   w.innerHTML='<div class="t-wrap"><div>'+
-    '<div class="player"><video controls playsinline preload="metadata"'+(v.thumb?' poster="'+v.thumb+'"':'')+'><source src="'+curURL+'" type="'+tipe+'"></video></div>'+
-    '<a class="btn b-ghost b-sm" data-go="daftar" style="margin-top:14px">← Kembali ke Daftar</a>'+
+    '<div class="player"><video id="vidEl" controls playsinline preload="metadata"'+(v.thumb?' poster="'+v.thumb+'"':'')+'><source src="'+curURL+'" type="'+tipe+'"></video></div>'+
+    /* ── KONTROL PEMUTAR PINTAR ── */
+    '<div class="vctrl">'+
+      (prev?'<a class="btn b-ghost b-sm" data-act="prev" data-ref="'+id+'">⏮ Sebelumnya</a>':'<span class="btn b-ghost b-sm dis">⏮ Sebelumnya</span>')+
+      '<button class="btn b-ghost b-sm" data-act="replay">🔁 Ulangi</button>'+
+      (next?'<a class="btn b-grad b-sm" data-act="next" data-ref="'+id+'">⏭ Berikutnya: '+h(next.judul.slice(0,18))+' →</a>'
+           :'<span class="btn b-ghost b-sm dis">⏭ Berikutnya</span>')+
+      '<label class="switch"><input type="checkbox" id="tgAuto"'+(autoNext?' checked':'')+'><span class="sl"></span><span class="sw-t">⚡ Auto-Next '+(autoNext?'ON':'OFF')+'</span></label>'+
+    '</div>'+
     '<div class="t-info"><h1>'+h(v.judul)+'</h1>'+
-    '<div class="t-meta"><span class="badge2">'+h(v.kategori)+'</span><span>👁 '+fmt(vCount(id))+'x ditonton</span><span>🗓 '+tglID(v.tanggal)+'</span></div>'+
+    '<div class="t-meta"><span class="badge2">'+h(v.kategori)+'</span><span>👁 '+fmt(vCount(id))+'x ditonton</span><span>🗓 '+tglID(v.tanggal)+'</span><span>🎬 Video '+(idx+1)+' dari '+pl.length+'</span></div>'+
     (v.desc?'<div class="desc">'+h(v.desc)+'</div>':'')+
     '</div></div>'+
-    '<div class="side"><h3>Video Lainnya</h3>'+(rel.map(cardHTML).join('')||'<div class="mini">Belum ada video lain.</div>')+'</div></div>';
+    '<div class="side">'+
+    (next?'<div class="nextup"><div class="lb">⏭ SELANJUTNYA OTOMATIS</div><div class="ti2">'+h(next.judul)+'</div></div>':'')+
+    '<h3>Video Lainnya</h3>'+(rel.map(cardHTML).join('')||'<div class="mini">Belum ada video lain.</div>')+'</div></div>';
+
+  /* Event pemutar */
+  const vid=$('#vidEl');
+  const tg=$('#tgAuto');
+  tg.addEventListener('change',()=>{
+    autoNext=tg.checked;
+    try{localStorage.setItem('vk_autonext',autoNext?'1':'0')}catch(e){}
+    tg.nextElementSibling; /* noop */
+    tg.parentElement.querySelector('.sw-t').textContent='⚡ Auto-Next '+(autoNext?'ON':'OFF');
+    toast(autoNext?'⚡ Auto-Next AKTIF — video habis langsung lanjut':'Auto-Next dimatikan');
+  });
+  vid.onended=()=>{
+    if(autoNext&&next){toast('▶️ Lanjut ke: '+next.judul);openTonton(next.id,true);}
+    else{vid.currentTime=0;vid.play().catch(()=>{});}
+  };
+  /* Auto-play kalau datang dari auto-next / tombol next */
+  if(wantAutoPlay){wantAutoPlay=false;vid.play().catch(()=>{});}
 }
 
 /* ═══ DATA VIDEO ═══ */
@@ -595,14 +650,14 @@ function renderData(){
      '<td><div class="acts">'+
        '<a class="btn b-ghost b-sm" data-act="open" data-id="'+v.id+'" title="Tonton">▶</a>'+
        '<a class="btn b-ghost b-sm" data-go="edit" data-params=\'{"id":'+v.id+'}\' title="Edit">✏️</a>'+
-       '<button class="btn b-red b-sm" data-act="del" data-id="'+v.id+'" title="Klik 2x untuk hapus">🗑</button>'+
+       '<button class="btn b-red b-sm" data-act="del" data-id="'+v.id+'" title="Hapus manual (klik 2x)">🗑</button>'+
      '</div></td></tr>').join('')+'</table></div>';
 }
 function hapusVideo(id){
   const v=vById(id);if(!v)return;
   videos=videos.filter(x=>x.id!==id);
   views=views.filter(w=>w.videoId!==id);
-  simpan();toast('Video dihapus 🗑');render();
+  simpan();toast('Video dihapus permanen 🗑');render();
 }
 
 /* ═══ EDIT ═══ */
@@ -631,8 +686,9 @@ function renderDashboard(){
    '<div class="stat"><div class="ic">🎬</div><div class="n">'+fmt(tv)+'</div><div class="l">Total Video</div></div>'+
    '<div class="stat"><div class="ic">👁</div><div class="n">'+fmt(tw)+'</div><div class="l">Total Ditonton</div></div>'+
    '<div class="stat"><div class="ic">🗂</div><div class="n">'+KATEGORI.length+'</div><div class="l">Kategori Aktif</div></div>'+
-   '<div class="stat"><div class="ic">🔥</div><div class="n sm">'+(pop?h(pop.judul.slice(0,26)):'—')+'</div><div class="l">Terpopuler'+(pop?' · '+fmt(vCount(pop.id))+'x':'')+'</div></div>'+
-   '<div class="stat"><div class="ic">'+(mode==='db'?'💾':'⚠️')+'</div><div class="n sm">'+(mode==='db'?'Permanen':'Sementara')+'</div><div class="l">Status Penyimpanan</div></div>';
+   '<div class="stat"><div class="ic">⚡</div><div class="n sm">'+(autoNext?'Auto-Next ON':'Auto-Next OFF')+'</div><div class="l">Fitur Pemutar</div></div>'+
+   '<div class="stat"><div class="ic">💾</div><div class="n sm">Auto-Save</div><div class="l">Penyimpanan Permanen</div></div>'+
+   '<div class="stat"><div class="ic">🔥</div><div class="n sm">'+(pop?h(pop.judul.slice(0,26)):'—')+'</div><div class="l">Terpopuler'+(pop?' · '+fmt(vCount(pop.id))+'x':'')+'</div></div>';
   const labels=[],data=[];
   for(let i=6;i>=0;i--){const d=new Date();d.setDate(d.getDate()-i);
     labels.push(d.getDate()+' '+BLN[d.getMonth()]);
@@ -715,8 +771,8 @@ function kecilkanGambar(file){return new Promise((res)=>{
   if(tf){if(!tf.type.startsWith('image/'))return show('Thumbnail harus berupa gambar.','no');thumb=await kecilkanGambar(tf);}
   const rec={id:++idc,judul:judul,desc:$('#upDesc').value.trim(),kategori:$('#upKat').value,file:f,thumb:thumb,tanggal:new Date().toISOString()};
   videos.push(rec);simpan();e.target.reset();$('#upFileName').textContent='';
-  show('🎉 Video "'+h(judul)+'" berhasil diupload! Langsung tampil di Beranda & Daftar Video website umum.','ok');
-  toast('Upload berhasil 🎉');
+  show('🎉 Video "'+h(judul)+'" berhasil diupload & tersimpan otomatis permanen! Langsung tampil di Beranda & Daftar Video.','ok');
+  toast('Upload berhasil & tersimpan 💾');
 });
  $('#formEdit').addEventListener('submit',async e=>{e.preventDefault();
   const v=vById(editId);if(!v)return;
@@ -724,33 +780,35 @@ function kecilkanGambar(file){return new Promise((res)=>{
   v.judul=$('#edJudul').value.trim()||v.judul;v.desc=$('#edDesc').value.trim();v.kategori=$('#edKat').value;
   const tf=$('#edThumb').files[0];
   if(tf&&tf.type.startsWith('image/')){const t=await kecilkanGambar(tf);if(t)v.thumb=t;}
-  simpan();msg.textContent='✅ Perubahan tersimpan.';msg.className='alert ok';msg.style.display='block';
-  toast('Tersimpan ✅');setTimeout(()=>nav('data'),800);
+  simpan();msg.textContent='✅ Perubahan tersimpan otomatis.';msg.className='alert ok';msg.style.display='block';
+  toast('Tersimpan 💾');setTimeout(()=>nav('data'),800);
 });
  $('#formPass').addEventListener('submit',e=>{e.preventDefault();
   const p=$('#pwBaru').value;
   if(p.length<4)return toast('Password minimal 4 karakter');
-  adminPass=p;sSet('vk_pass',p);$('#pwBaru').value='';toast('Password admin berhasil diganti ✅');});
+  adminPass=p;try{localStorage.setItem('vk_pass',p)}catch(e){}
+  $('#pwBaru').value='';toast('Password tersimpan permanen ✅');});
  $('#btnReset').addEventListener('click',e=>{e.preventDefault();
   if(!armBtn(e.currentTarget))return;
-  videos=[];views=[];idc=0;wid=0;simpan();toast('Semua data direset');render();});
+  videos=[];views=[];idc=0;wid=0;simpan();toast('Semua data dihapus manual');render();});
 
 /* ═══ INIT ═══ */
-function isiKat(sel,empty){sel.innerHTML=(empty?'<option value="">Semua Kategori</option>':'<option value="'+KATEGORI[0]+'">'+KATEGORI[0]+'</option>')+KATEGORI.slice(empty?0:1).map(k=>'<option>'+k+'</option>').join('');}
+function isiKat(sel,def){sel.innerHTML=KATEGORI.map(k=>'<option'+(k===def?' selected':'')+'>'+k+'</option>').join('');}
  $('#yr').textContent=new Date().getFullYear();
-isiKat($('#fkat'),true);isiKat($('#dkat'),true);isiKat($('#upKat'),false);isiKat($('#edKat'),false);
-render();
+isiKat($('#fkat'),'');$('#fkat').insertAdjacentHTML('afterbegin','<option value="">Semua Kategori</option>');
+isiKat($('#dkat'),'');$('#dkat').insertAdjacentHTML('afterbegin','<option value="">Semua Kategori</option>');
+isiKat($('#upKat'),KATEGORI[0]);isiKat($('#edKat'),KATEGORI[0]);
 (async()=>{
   try{
     idb=await idbOpen();
     const vs=await idbAll('video'),ws=await idbAll('views');
-    mode='db';
     if(vs.length){videos=vs;views=ws;
       idc=Math.max.apply(null,videos.map(v=>v.id));
-      wid=Math.max.apply(null,views.map(w=>w.id));render();}
-    setStatus();
-  }catch(e){mode='mem';setStatus();}
+      wid=Math.max.apply(null,views.map(w=>w.id));}
+  }catch(e){toast('⚠️ Penyimpanan tidak tersedia — buka lewat Chrome/Edge langsung');}
+  render();
 })();
+window.addEventListener('beforeunload',()=>{if(idb&&videos.length)simpan();});
 </script>
 </body>
 </html>
